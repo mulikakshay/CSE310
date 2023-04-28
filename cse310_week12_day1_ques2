@@ -1,0 +1,21 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import java.util.function.Predicate;
+
+class Student {
+  String name;
+  int rollNo;
+  String department;
+
+  public Student(String name, int rollNo, String department) {
+    this.name = name;
+    this.rollNo = rollNo;
+    this.department = department;
+  }
+}
+
+@FunctionalInterface
+interface StudentPredicate {
+  boolean test(Student s);
+}
