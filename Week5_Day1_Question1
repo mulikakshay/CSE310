@@ -1,0 +1,44 @@
+import java.io.*;
+import java.util.*;
+class complex{
+    int real,imaginary;
+    complex(){
+        
+    }
+    complex(int r,int im){
+        real=r;
+        imaginary=im;
+    }
+     complex(int r){
+        real=r;
+        
+    }
+   
+}
+
+public class Solution {
+public static void mul_complex(complex a,complex a1){
+    int ans= (a.real*a1.real-a1.imaginary*a.imaginary);
+    int ans1=(a.real*a1.imaginary+a1.real*a.imaginary);
+    System.out.println(ans+"+"+ans1+"i");
+}
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc=new Scanner(System.in);
+       String s=sc.nextLine();
+        String s1=sc.nextLine();
+         String arr[] = s.split(" ");
+          String arr1[] = s1.split(" ");
+        if(arr.length==1){
+            complex se=new complex(Integer.parseInt(arr[0]));
+            complex se1=new complex(Integer.parseInt(arr1[0]),Integer.parseInt(arr1[1]));
+         mul_complex(se,se1);
+        }
+        else{
+            complex se=new complex(Integer.parseInt(arr[0]),Integer.parseInt(arr[1]));
+            complex se1=new complex(Integer.parseInt(arr1[0]),Integer.parseInt(arr1[1]));
+         mul_complex(se,se1);
+        }
+       
+    }
+}
